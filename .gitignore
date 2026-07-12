@@ -1,0 +1,23 @@
+# Estado de runtime (datos generados por el watcher/servidor)
+data/
+*.jsonl
+*.jsonl.bak*
+seen.json
+exclusions.json
+reviewed.json
+reviewed.json.bak*
+learned_filters.json
+learned_filters.json.bak*
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.pytest_cache/
+
+# Node / frontend
+market_dashboard/node_modules/
+market_dashboard/dist/
+
+# Claude Code (config local de esta máquina)
+.claude/settings.local.json
