@@ -1,5 +1,6 @@
-# Estado de runtime (datos generados por el watcher/servidor)
-data/
+# Runtime data (legacy JSONL and state files). Labels are the only committed data.
+data/*
+!data/labels/
 *.jsonl
 *.jsonl.bak*
 seen.json
@@ -9,15 +10,25 @@ reviewed.json.bak*
 learned_filters.json
 learned_filters.json.bak*
 
+# Secrets and browser session state
+.env
+state.json
+*storage_state*
+
 # Python
 __pycache__/
 *.pyc
 venv/
+.venv/
 .pytest_cache/
+.ruff_cache/
 
 # Node / frontend
 market_dashboard/node_modules/
 market_dashboard/dist/
 
-# Claude Code (config local de esta máquina)
+# Abandoned prototype refactor, kept locally only
+marketwatch/
+
+# Claude Code local settings
 .claude/settings.local.json
