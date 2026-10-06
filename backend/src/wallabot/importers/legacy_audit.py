@@ -452,6 +452,15 @@ def render(
     jsonl_ids = set().union(*(set(s.rows_per_item) for s in all_stats)) if all_stats else set()
     out = [BEGIN, "", "## Generated tables", "", "### JSONL files", ""]
     out += render_jsonl_summary(all_stats)
+    union = {
+        source: set().union(*(s.items_by_source[source] for s in all_stats))
+        for source in ("wallapop", "vinted")
+    }
+    out += [
+        f"Union of all audited JSONL files: {_n(len(union['wallapop']))} Wallapop items, "
+        f"{_n(len(union['vinted']))} Vinted items.",
+        "",
+    ]
     for s in all_stats:
         if s.label in detailed:
             out += render_jsonl_detail(s)
