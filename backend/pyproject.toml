@@ -25,6 +25,8 @@ addopts = "-ra"
 [tool.ruff]
 line-length = 100
 target-version = "py312"
+# Prototype code is kept byte-identical until Phase 2/3 replaces it (see DECISIONS.md).
+extend-exclude = ["src/wallabot/legacy"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP"]
